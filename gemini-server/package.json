@@ -1,0 +1,25 @@
+{
+  "name": "q-chat",
+  "version": "1.0.0",
+  "description": "palm ai chat  ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulrhmanalqassas/q-chat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdulrhmanalqassas/q-chat/issues"
+  },
+  "homepage": "https://github.com/abdulrhmanalqassas/q-chat#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.17.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}
