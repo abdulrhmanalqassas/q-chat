@@ -16,30 +16,22 @@ const testPrompt = "Write a  childern book   "
 const startPrompt = "Write a chat bot server home bage and  use html notation and in line css with cool gradint anmated colord background"
 
 const resultMess = null ; 
-
+function GenerateResponse(prompt,res){
+   model.generateContent(prompt).then((result)=>{
+      const response =  result.response;
+      const text = response.text();
+      console.log(text);
+      res.send({"data":text})
+   });
+}
 
 app.get('/api', (req, res) => {
- 
-  model.generateContent(CVprompt).then((result)=>{
-            const response =  result.response;
-            console.log("MMMMMMMMMMMMMMMM<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>",response);
-            const text = response.text();
-         
-            console.log(text);
-            res.send(text)
-         });
+  GenerateResponse(CVprompt,res)
 });
 
 app.post('/test', (req, res) => {
  const prompt = req.body.prompt
-  model.generateContent(prompt).then((result)=>{
-            const response =  result.response;
-            console.log("0000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxx",response);
-            const text = response.text();
-         
-            console.log(text);
-            res.send({"data":text})
-         });
+ GenerateResponse(prompt,res)
 });
 
 app.get('/', (req, res) => {
